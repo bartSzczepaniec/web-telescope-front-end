@@ -1,13 +1,20 @@
 import './App.css';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Intro  from './pages/Intro';
+import Menu from './pages/Menu';
+import Login from './pages/Login';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Work in progress
-        </p>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Intro />} />
+          <Route path="/intro" element={<Intro />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/zaloguj-sie" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
