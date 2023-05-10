@@ -1,12 +1,11 @@
+import MainNav from "../components/MainNav";
+import StandardHeader from "../components/StandardHeader";
 
 function Menu() {
     return (
       <div className="Menu">
-        <header className="App-header">
-          <p>
-            Work in progress - Menu
-          </p>
-        </header>
+        <StandardHeader title="MENU" />
+        <MainNav />
       </div>
     );
   }

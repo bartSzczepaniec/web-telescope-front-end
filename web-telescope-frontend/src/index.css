@@ -9,6 +9,20 @@ body {
   background-size: cover;
 }
 
+
+.Standard-header img {
+  width: 312px;
+  object-fit: contain;
+}
+
+header.Standard-header {
+  margin-top: 12px;
+}
+
+.Standard-header h3 {
+  font-size: 30px;
+}
+
 /*  Intro / Landing-page */
 
 .horizontal-spacer {
@@ -51,3 +65,55 @@ button.menu-small-button:hover {
   cursor: pointer;
   transform: scale(1.05); 
 }
+
+/* Menu */
+
+div.Menu {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.nav-col {
+  display: inline-block;
+  width: 33%;
+}
+
+button.main-menu-button {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  width: 330px;
+  min-height: 74px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #0A1126;
+  border: 2px solid #0A1126;
+  border-radius: 15px;
+  margin-top: 20px;
+  transition-duration: 0.3s;
+}
+
+button.main-menu-button:hover {
+  cursor: pointer;
+  transform: scale(1.05); 
+}
+
+.main-menu-button img{
+  width: 40%;
+}
+
+div.button-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  min-height: 180px;
+}
+
+/*
+
+
+TODO ANIMACJA WEJSCIA TYTULU STRONY POD LOGIEM
+
+
+*/
