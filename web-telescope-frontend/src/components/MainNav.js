@@ -9,10 +9,10 @@ function MainNav() {
                 <MainMenuButton text="Profil użytkownika" link="/zaloguj-sie" icon={ProfilIcon} />
             </div>
             <div className="nav-col">
-                <MainMenuButton text="Ucz się" link="/zaloguj-sie" icon={LearnIcon} />
+                <MainMenuButton text="Ucz się" link="/menu-ucz-sie" icon={LearnIcon} />
             </div>
             <div className="nav-col">
-                <MainMenuButton text="Sprawdź swoją wiedzę" link="/zaloguj-sie" icon={TestIcon} />
+                <MainMenuButton text="Sprawdź swoją wiedzę" link="/menu-testy" icon={TestIcon} />
             </div>
         </nav>
     );
