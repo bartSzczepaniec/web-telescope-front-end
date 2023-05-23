@@ -7,11 +7,15 @@ import Register from './pages/Register';
 import TestMenu from './pages/TestMenu';
 import LearnMenu from './pages/LearnMenu';
 import LearnSection from './pages/LearnSection';
+import TestSection from './pages/TestSection';
+import Subject from './pages/Subject';
+import ScrollTopInstant from './ScrollTopInstant';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <ScrollTopInstant />
         <Routes>
           <Route index element={<Intro />} />
           <Route path="/intro" element={<Intro />} />
@@ -21,6 +25,8 @@ function App() {
           <Route path="/menu-ucz-sie" element={<LearnMenu />} />
           <Route path="/menu-testy" element={<TestMenu />} />
           <Route path="/ucz-sie-dzial" element={<LearnSection />} />
+          <Route path="/testy-dzial" element={<TestSection />} />
+          <Route path="/temat" element={<Subject />} />
         </Routes>
       </BrowserRouter>
     </div>
