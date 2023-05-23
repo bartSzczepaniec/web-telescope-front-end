@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import TestMenu from './pages/TestMenu';
 import LearnMenu from './pages/LearnMenu';
+import LearnSection from './pages/LearnSection';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/zarejestruj-sie" element={<Register />} />
           <Route path="/menu-ucz-sie" element={<LearnMenu />} />
           <Route path="/menu-testy" element={<TestMenu />} />
+          <Route path="/ucz-sie-dzial" element={<LearnSection />} />
         </Routes>
       </BrowserRouter>
     </div>
