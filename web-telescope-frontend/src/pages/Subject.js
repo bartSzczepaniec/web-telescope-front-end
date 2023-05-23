@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SectionImagePlaceholder from "../assets/content/galaktyka.jpg"
 import StandardHeader from "../components/StandardHeader";
 
-function TestSection() {
+function Subject() {
     return (
       <div className="Subject">
         <StandardHeader />
@@ -30,4 +30,4 @@ function TestSection() {
     );
   }
   
-  export default TestSection;
+  export default Subject;

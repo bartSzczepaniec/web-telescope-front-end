@@ -10,6 +10,7 @@ import LearnSection from './pages/LearnSection';
 import TestSection from './pages/TestSection';
 import Subject from './pages/Subject';
 import ScrollTopInstant from './ScrollTopInstant';
+import UserProfile from './pages/UserProfile';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/ucz-sie-dzial" element={<LearnSection />} />
           <Route path="/testy-dzial" element={<TestSection />} />
           <Route path="/temat" element={<Subject />} />
+          <Route path="/profil" element={<UserProfile />} />
         </Routes>
       </BrowserRouter>
     </div>

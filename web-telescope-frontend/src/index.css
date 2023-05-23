@@ -370,10 +370,93 @@ img.topic-arrow {
   margin-left: auto;
   margin-right: auto;
  }
+
+/* User profile page */
+
+div.profile-col-l {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+}
+
+div.profile-col-r {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+}
+
+div.profile-col-content {
+  margin: 10px;
+  box-shadow: 1px 3px 10px 0px rgba(0, 0, 0, 1);
+  padding: 30px;
+  vertical-align: top;
+}
+
+.profile-menu-link {
+  margin: 10px;
+}
+
+.User-profile {
+  font-size: 18px;
+}
+
+.User-profile h4 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+.User-profile h5 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.liked-topics img, .liked-topics h4, .liked-topics h5 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px;
+}
+
+.liked-topics .topic {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+div.scores {
+  background-color: black;
+  height: 100px;
+  overflow: scroll;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 15px;
+}
+
+.good-score {
+  color: #13F34F;
+}
+
+.medium-score {
+  color: #E6E026;
+}
+
+.bad-score {
+  color: #FB2424;
+}
+
+
+
 /*
 
 
-TODO ANIMACJA WEJSCIA TYTULU STRONY POD LOGIEM
+TODO ANIMACJA WEJSCIA TYTULU STRONY POD LOGIEM,
+ZDJĘCIA Z HEIGHT NA %VIEWHEIGHT ALBO %
 
 
 */
