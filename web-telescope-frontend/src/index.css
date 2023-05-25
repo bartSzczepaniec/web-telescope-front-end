@@ -23,6 +23,23 @@ header.Standard-header {
   font-size: 30px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .Standard-header h3 {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .Standard-header img {
+    width: 180px; 
+    margin-bottom: 10px;
+  }
+  .Standard-header h3 {
+    margin-top: 0px;
+    font-size: 26px;
+  }
+}
+
 /*  Intro / Landing-page */
 
 .horizontal-spacer {
@@ -46,6 +63,11 @@ div.Intro {
   object-fit: contain;
 }
 
+header {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 button.menu-small-button {
   color: white;
   font-size: 22px;
@@ -65,6 +87,26 @@ button.menu-small-button:hover {
   cursor: pointer;
   transform: scale(1.05); 
 }
+
+@media only screen and (max-width: 767px) {
+  .Intro img {
+    width: 180px;
+    object-fit: contain;
+  }
+  button.menu-small-button {
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .Intro h2 {
+    font-size: 30px;
+  }
+  .horizontal-spacer {
+    width: 100px;
+  }
+
+}
+
 
 /* Menu */
 
@@ -110,6 +152,40 @@ div.button-image-container {
   min-height: 180px;
 }
 
+@media only screen and (max-width: 1199px) {
+  button.main-menu-button {
+    width: 295px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  div.nav-col {
+    width: 100%;
+  }
+  .main-menu-button img{
+    width: 70px;
+  }
+  div.button-image-container {
+    min-height: 90px;
+  }
+  button.main-menu-button {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  div.button-image-container {
+    display: none;
+  }
+  button.main-menu-button {
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+
 /* Login/Register page */
 
 .Small-header img {
@@ -152,14 +228,14 @@ div.form-container {
   font-size: 22px;
   font-weight: bold;
   text-align: left;
-  width: 40%;
+  width: 400px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 100px;
 }
 
 .form-input {
-  width: 80%;
+  width: 100%;
   font-size: 22px;
   color: white;
   border: 1px solid #6889A6;
@@ -167,6 +243,9 @@ div.form-container {
   background-color: #0A1126;
   padding: 15px;
   margin-bottom: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-submit {
@@ -180,8 +259,11 @@ div.form-container {
   padding-bottom: 15px;
   padding-left: 60px;
   padding-right: 60px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 input.form-submit:hover {
@@ -201,6 +283,54 @@ input.form-input::placeholder {
   font-size: 18px;
   text-decoration: none !important;
 }
+
+@media only screen and (max-width: 1024px) {
+  div.form-container {
+    width: 80%;
+  }
+  .form-container form {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: left;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 100px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .form-container form label {
+    text-align: center;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .form-container form {
+    font-size: 20px;
+    width: 80%;
+  }
+  .form-input {
+    font-size: 20px;
+    width: 80%;
+  }
+  .form-container h4 {
+    font-size: 24px;
+  }
+  .form-submit {
+    font-size: 20px;
+  }
+  .register-link {
+    font-size: 16px;
+  }
+  input.form-input::placeholder {
+    font-size: 20px;
+  }
+  .Small-header img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 /* Section menu */
 
@@ -239,6 +369,35 @@ div.section-button-image-container {
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 1199px) {
+  button.section-menu-button {
+    width: 295px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .section-menu-button img{
+    height: 10vh;
+  }
+  button.section-menu-button{
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+}
+
+@media only screen and (max-width: 767px) {
+  div.section-button-image-container {
+    display: none;
+  }
+  button.section-menu-button {
+    font-size: 22px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 
@@ -281,8 +440,8 @@ h3.content-header {
 
 div.content-top-image-container  {
   display: block;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 div.main-content {
@@ -350,13 +509,41 @@ img.topic-arrow {
   cursor: pointer;
 }
 
+
+@media only screen and (max-width: 1024px) {
+  .content-top-image-container img{
+    height: 25vh;
+  }
+  h3.content-header {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  h3.content-header {
+    font-size: 26px;
+  }
+  .Chapter h4 {
+    font-size: 24px;
+  }
+  .Chapter h5 {
+    font-size: 18px;
+  }
+  .wide-content-container a{
+    font-size: 16px;
+  }
+}
+
+
 /* Subject page */
 
 .main-content.subject p {
   font-size: 18px;
  }
 
- .main-content.subject p h5 {
+ .main-content.subject h5 {
   font-size: 20px;
   font-weight: 700;
   margin-top: 5px;
@@ -369,6 +556,16 @@ img.topic-arrow {
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
+ }
+
+ @media only screen and (max-width: 767px) {
+  .main-content.subject p {
+    font-size: 16px;
+   }
+  
+   .main-content.subject h5 {
+    font-size: 18px;
+   }
  }
 
 /* User profile page */
@@ -386,10 +583,12 @@ div.profile-col-r {
 }
 
 div.profile-col-content {
+  font-size: 16px;
   margin: 10px;
   box-shadow: 1px 3px 10px 0px rgba(0, 0, 0, 1);
   padding: 30px;
   vertical-align: top;
+  min-height: 140px;
 }
 
 .profile-menu-link {
@@ -408,7 +607,7 @@ div.profile-col-content {
 }
 
 .User-profile h5 {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
   margin-top: 10px;
@@ -450,7 +649,36 @@ div.scores {
   color: #FB2424;
 }
 
+@media only screen and (max-width: 1024px) {
+  div.profile-col-content {
+    min-height: 180px;
+  }
 
+}
+
+@media only screen and (max-width: 767px) {
+  div.profile-col-l {
+    width: 100%;
+  }
+  div.profile-col-r {
+    width: 100%;
+  }
+  div.profile-col-content {
+    min-height: 0px;
+    font-size: 14px;
+  }
+  .User-profile h4 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  div.profile-col-content {
+    padding: 15px;
+  }
+  .User-profile h5 {
+    text-align: center;
+  }
+}
 
 /*
 

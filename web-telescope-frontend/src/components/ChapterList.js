@@ -3,7 +3,7 @@ import { useState } from "react";
 import arrow from '../assets/right-arrow-icon.svg';
 
 function ChapterList() {
-    const [isVisible, setVisible] = useState(true);
+    const [isVisible, setVisible] = useState(false);
 
     const toggleClass = () => {
       setVisible(!isVisible);
