@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import arrow from '../assets/right-arrow-icon.svg';
 
-function ChapterList() {
+function ChapterList(props) {
     const [isVisible, setVisible] = useState(false);
 
     const toggleClass = () => {
@@ -11,20 +11,18 @@ function ChapterList() {
 
     return (
         <div className="Chapter">
+                    {console.log(props.data)}
             <div className="chapter-button" onClick={toggleClass}>
-                <img className="chapter-arrow" src={arrow} alt="arrow" /> <h4 className="chapter-title">Rozdzial</h4>
+                <img className="chapter-arrow" src={arrow} alt="arrow" /> <h4 className="chapter-title">{props.data.title}</h4>
             </div>
             <div className={isVisible ? "topics show": "topics"}>
+            {props.data.topics.map(topic =>
             <div className="topic">
-                <Link to="/temat?id=0">
-                    <img className="topic-arrow" src={arrow} alt="arrow" /> <h5 className="topic-title">Temat</h5>
-                </Link>
+                <Link to={"/temat?id="+topic.id}>
+                     <img className="topic-arrow" src={arrow} alt="arrow" /> <h5 className="topic-title">{topic.title}</h5>
+                 </Link>
             </div>
-            <div className="topic">
-                <Link to="/temat?id=0">
-                    <img className="topic-arrow" src={arrow} alt="arrow" /> <h5 className="topic-title">Temat</h5>
-                </Link>
-            </div>
+            )}
             </div>
         </div>
     );

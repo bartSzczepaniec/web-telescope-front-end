@@ -1,21 +1,34 @@
 import StandardHeader from "../components/StandardHeader";
-import SectionImagePlaceholder from "../assets/content/galaktyka.jpg"
+import React, { useEffect, useState } from "react";
 import SectionMenuButton from "../components/SectionMenuButton";
 
 function TestMenu() {
+    const [sections, setSections] = useState([])
+
+    const fetchSectionsData = () => {
+      fetch("http://127.0.0.1:8000/sections?format=json")
+        .then(response => {
+          return response.json()
+        })
+        .then(data => {
+          setSections(data)
+          return data
+        })
+    }
+  
+    useEffect(() => {
+      fetchSectionsData()
+    }, [])
+
     return (
         <div className="Menu">
           <StandardHeader title="UCZ SIĘ" />
           <nav className="Main-nav">
-              <div className="nav-col">
-                  <SectionMenuButton text="DZIAŁ 1" link="/testy-dzial?id=0" icon={SectionImagePlaceholder} />
-              </div>
-              <div className="nav-col">
-                  <SectionMenuButton text="DZIAŁ 2" link="/testy-dzial?id=1" icon={SectionImagePlaceholder} />
-              </div>
-              <div className="nav-col">
-                  <SectionMenuButton text="DZIAŁ 3" link="/testy-dzial?id=2" icon={SectionImagePlaceholder} />
-              </div>
+          {sections.map(section => 
+             <div className="nav-col">
+              <SectionMenuButton text={section.title}link={"/testy-dzial?id=" + section.id} icon={require("../assets/content/" + section.photo.url)} />
+             </div>
+          )}
           </nav>
         </div>
       );
