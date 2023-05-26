@@ -16,7 +16,6 @@ function LearnSection() {
         return response.json()
       })
       .then(data => {
-
         setChapters(data.chapters);
         setTitle(data.title);
         setPhoto(data.photo.url);

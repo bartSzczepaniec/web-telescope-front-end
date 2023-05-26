@@ -27,7 +27,7 @@ function Test() {
     return (
       <div className="Test">
         <StandardHeader title="TEST"/>
-        {test && <TestQuestion data={test} />}
+        {test && <TestQuestion data={test} sectionid={searchParams.get("dzial")} />}
       </div>
     );
   }

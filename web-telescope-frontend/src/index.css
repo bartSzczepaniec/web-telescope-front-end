@@ -34,6 +34,12 @@ header.Standard-header {
 
 .top-header a {
   margin-right: 3px;
+  text-decoration: none !important;
+  color: white;
+}
+
+.top-header a:hover {
+  cursor: pointer;
 }
 
 .smallA {
@@ -601,6 +607,27 @@ img.topic-arrow {
   margin-right: auto;
  }
 
+ .favourite-button {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  border: 1px solid #121D40;
+  border-radius: 10px;
+  background-color: #121D40;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  display: block;
+  transition-duration: 0.3s;
+}
+
+.favourite-button:hover {
+  cursor: pointer;
+  transform: scale(1.05); 
+}
  @media only screen and (max-width: 767px) {
   .main-content.subject p {
     font-size: 16px;
@@ -615,6 +642,10 @@ img.topic-arrow {
    .main-content.subject h4.time {
     margin-bottom: 40px;
    }
+   .favourite-button {
+    margin-left: auto;
+    margin-right: auto;
+  }
  }
 
 /* User profile page */
@@ -786,6 +817,34 @@ div.question-content {
   margin-right: auto;
  }
 
+.answer-option {
+  text-align: left;
+}
+div.answer-option {
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+div.radio-option {
+  display: inline-block;
+  width: 45%;
+}
+
+div.label-option {
+  display: inline-block;
+  width: 55%;
+}
+
+.radio-option{
+  text-align: right;
+}
+
+.radio-option input {
+  color: green !important;
+}
+
 .answers-col {
   width: 50%;
   display: inline-block;
@@ -804,7 +863,10 @@ div.question-content {
   margin-top: 20px;
   transition-duration: 0.3s;
 }
-
+.answers input:hover, .answers button:hover {
+  cursor: pointer;
+  transform: scale(1.05); 
+}
 .answers {
   margin-bottom: 60px;
 }
@@ -852,6 +914,10 @@ h3.answer-feedback {
   .answers input, .answers button{
     font-size: 18px;
     width: 80%;
+  }
+  div.radio-option, div.label-option {
+    display: inline;
+    width: 50%;
   }
 }
 

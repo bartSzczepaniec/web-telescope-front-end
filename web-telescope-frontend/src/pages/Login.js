@@ -14,7 +14,7 @@ async function loginHandle(data) {
     .then(data => data.json())
  }
 
- function setUserId(userId) {
+ async function setUserId(userId) {
   sessionStorage.setItem('userid', JSON.stringify(userId))
  }
 
@@ -24,20 +24,21 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async e => {
+    e.preventDefault();
     const token = await loginHandle({
       "username":login,
-      "password":password,
+      "password":password
     });
-    if (!token.user_id) {
-      setUserId(token.user_id)
+
+    if(typeof JSON.stringify(token.user_id) !== 'undefined') {
+      await setUserId(token.user_id)
       navigate("/menu");
-    }
+    } 
   }
 
   useEffect(() => {
     const tokenString = sessionStorage.getItem('userid');
-    const userToken = JSON.parse(tokenString);
-    if(userToken) {
+    if(tokenString && typeof tokenString != 'undefined' && tokenString !== null) {
       navigate("/menu");
     }
   }, [])

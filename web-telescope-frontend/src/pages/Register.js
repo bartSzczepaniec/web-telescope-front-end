@@ -1,6 +1,6 @@
 import SmallHeader from "../components/SmallHeader";
 import React, { useEffect, useState } from "react";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 async function registerHandle(data) {
   return fetch('http://127.0.0.1:8000/users', {
@@ -18,18 +18,20 @@ function Register() {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
   const [passwordr, setPasswordr] = useState()
+  const navigate = useNavigate();
 
   const handleRegister = async e => {
+    e.preventDefault();
     if(password == passwordr) {
       const token = await registerHandle({
         "username":login,
         "password":password,
         "email":email
       });
-      redirect("/menu");
+      navigate("/zaloguj-sie");
     }
     else {
-      console.log("hasła nie są takie same")
+      alert("hasła nie są takie same")
     }
   }
 

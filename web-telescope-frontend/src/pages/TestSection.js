@@ -11,6 +11,7 @@ function TestSection() {
   const [title, setTitle] = useState("")
   const [photo, setPhoto] = useState("")
   const [searchParams, setSearchParams] = useSearchParams();
+
   const fetchChaptersData = () => {
     fetch("http://127.0.0.1:8000/sections/" + searchParams.get("id") + "/tests?format=json")
       .then(response => {
@@ -45,7 +46,7 @@ function TestSection() {
                 </div>
                 <div className="main-content">
                   {chapters.map(chapter => 
-                   <ChapterTestList data={chapter} />
+                   <ChapterTestList data={chapter} sectionid={searchParams.get("id")} />
                     )}
                 </div>
             </div>

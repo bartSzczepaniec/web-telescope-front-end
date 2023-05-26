@@ -4,6 +4,16 @@ import { Link } from "react-router-dom";
 import SectionImagePlaceholder from "../assets/content/galaktyka.jpg"
 import StandardHeader from "../components/StandardHeader";
 
+async function favouriteHandle(data, user) {
+  return fetch('http://127.0.0.1:8000/users/'+user+'/favourited_topics', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+ }
+
 function Subject() {
   const [paragraphs, setParagraphs] = useState([])
   const [title, setTitle] = useState("")
@@ -11,6 +21,8 @@ function Subject() {
   const [time, setTime] = useState("")
   const [searchParams, setSearchParams] = useSearchParams();
   const [photos, setPhotos] = useState("")
+  const [user, setUser] = useState(sessionStorage.getItem('userid'))
+
   const fetchChaptersData = () => {
     fetch("http://127.0.0.1:8000/topics/" + searchParams.get("id") + "?format=json")
       .then(response => {
@@ -28,6 +40,21 @@ function Subject() {
   useEffect(() => {
     fetchChaptersData()
   }, [])
+
+  const checkIfLoggedIn = () => {
+    if(!user || typeof user === 'undefined' || user === null) {
+      return false
+    }
+    else {
+      return true
+    }
+  }
+
+  const handleFavourite = async e => {
+    const token = await favouriteHandle({
+      "topic_id":searchParams.get("id")
+    }, user);
+  }
 
     return (
       <div className="Subject">
@@ -55,6 +82,7 @@ function Subject() {
                       <img src={require("../assets/content/" + photo.url)} alt={photo.alt}/> 
                   </div>
                   )}
+                  {checkIfLoggedIn() && <div><button onClick={handleFavourite} className="favourite-button">Dodaj do ulubionych</button></div>}
                   {searchParams.get("dzial") && <Link to={"/ucz-sie-dzial?id=" + searchParams.get("dzial")}>Wróć do wyboru rozdziałów i tematów › </Link>}
                 </div>
             </div>

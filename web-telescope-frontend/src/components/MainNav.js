@@ -6,7 +6,7 @@ function MainNav() {
     return (
         <nav className="Main-nav">
             <div className="nav-col">
-                <MainMenuButton text="Profil użytkownika" link="/zaloguj-sie" icon={ProfilIcon} />
+                <MainMenuButton text="Profil użytkownika" link="/profil" icon={ProfilIcon} />
             </div>
             <div className="nav-col">
                 <MainMenuButton text="Ucz się" link="/menu-ucz-sie" icon={LearnIcon} />

@@ -11,7 +11,7 @@ function ChapterTestList(props) {
 
     return (
         <div className="Chapter">
-            <Link to={"/test?id="+props.data.id}>
+            <Link to={"/test?id="+props.data.id+"&dzial="+props.sectionid}>
             <div className="chapter-button">
                 <img className="chapter-arrow" src={arrow} alt="arrow" /> <h4 className="chapter-title">{props.data.title}</h4>
             </div>
