@@ -9,9 +9,9 @@ function Login() {
           <h4 className="form-header">Zaloguj się</h4>
           <hr className="form-spacer"></hr>
           <form>
-            <label for="login">Podaj login</label>
+            <label htmlFor="login">Podaj login</label>
             <input type="text" id="login" name="login" placeholder="Login..." className="form-input" />
-            <label for="pass">Podaj hasło</label>
+            <label htmlFor="pass">Podaj hasło</label>
             <input type="password" id="pass" name="pass" placeholder="Hasło..." className="form-input" />
             <input type="submit" value="Zaloguj się" className="form-submit" />
             <Link to='/zarejestruj-sie'><span className="register-link">Nie masz konta? Zarejestruj się</span></Link>

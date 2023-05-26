@@ -38,7 +38,7 @@ function LearnSection() {
                   {photo && <img src={require(("../assets/content/" +  photo))} alt={'Dzial 1'}/>}
                 </div>
                 <div className="main-content">
-                  {chapters.map(chapter => <ChapterList data={chapter} />)}
+                  {chapters.map(chapter => <ChapterList data={chapter} section={searchParams.get("id")} />)}
                 </div>
             </div>
         </div>
