@@ -3,9 +3,11 @@ import StandardHeader from "../components/StandardHeader";
 
 function Menu() {
     return (
-      <div className="Menu">
+      <div>
         <StandardHeader title="MENU" />
-        <MainNav />
+        <div className="Menu">
+          <MainNav />
+        </div>
       </div>
     );
   }

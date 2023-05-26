@@ -21,8 +21,9 @@ function TestMenu() {
     }, [])
 
     return (
+      <div>
+        <StandardHeader title="UCZ SIĘ" />
         <div className="Menu">
-          <StandardHeader title="UCZ SIĘ" />
           <nav className="Main-nav">
           {sections.map(section => 
              <div className="nav-col">
@@ -31,6 +32,7 @@ function TestMenu() {
           )}
           </nav>
         </div>
+      </div>
       );
   }
   

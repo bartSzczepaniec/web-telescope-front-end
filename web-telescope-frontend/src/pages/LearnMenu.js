@@ -22,8 +22,9 @@ function LearnMenu() {
   }, [])
 
     return (
-      <div className="Menu">
+      <div>
         <StandardHeader title="UCZ SIĘ" />
+      <div className="Menu">
         <nav className="Main-nav">
           {sections.map(section => 
              <div className="nav-col">
@@ -31,6 +32,7 @@ function LearnMenu() {
              </div>
           )}
         </nav>
+      </div>
       </div>
     );
   }

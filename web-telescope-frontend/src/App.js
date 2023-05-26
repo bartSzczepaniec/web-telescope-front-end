@@ -11,6 +11,7 @@ import TestSection from './pages/TestSection';
 import Subject from './pages/Subject';
 import ScrollTopInstant from './ScrollTopInstant';
 import UserProfile from './pages/UserProfile';
+import Test from './pages/Test';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/testy-dzial" element={<TestSection />} />
           <Route path="/temat" element={<Subject />} />
           <Route path="/profil" element={<UserProfile />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </BrowserRouter>
     </div>

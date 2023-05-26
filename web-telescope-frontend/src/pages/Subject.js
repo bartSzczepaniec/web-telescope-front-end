@@ -10,7 +10,7 @@ function Subject() {
   const [difficulty, setDifficulty] = useState("")
   const [time, setTime] = useState("")
   const [searchParams, setSearchParams] = useSearchParams();
-
+  const [photos, setPhotos] = useState("")
   const fetchChaptersData = () => {
     fetch("http://127.0.0.1:8000/topics/" + searchParams.get("id") + "?format=json")
       .then(response => {
@@ -21,7 +21,7 @@ function Subject() {
         setParagraphs(data.paragraphs)
         setDifficulty(data.difficulty)
         setTime(data.time_investment)
-
+        setPhotos(data.photos)
       })
   }
 
@@ -48,6 +48,11 @@ function Subject() {
                       <img src={require("../assets/content/" + photo.url)} alt={photo.alt}/>
                       )}
                       
+                  </div>
+                  )}
+                  {photos && photos.map(photo =>
+                  <div>
+                      <img src={require("../assets/content/" + photo.url)} alt={photo.alt}/> 
                   </div>
                   )}
                   {searchParams.get("dzial") && <Link to={"/ucz-sie-dzial?id=" + searchParams.get("dzial")}>Wróć do wyboru rozdziałów i tematów › </Link>}

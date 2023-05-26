@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import SectionImagePlaceholder from "../assets/content/galaktyka.jpg"
 import StandardHeader from "../components/StandardHeader";
 import arrow from '../assets/right-arrow-icon.svg';
+import { useNavigate } from "react-router-dom";
 
 function UserProfile() {
+
     return (
       <div className="User-profile">
         <StandardHeader />
