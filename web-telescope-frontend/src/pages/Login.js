@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StandardHeader from "../components/StandardHeader";
 import MenuButtonSmall from "../components/MenuButtonSmall";
+import sha512 from 'js-sha512';
 
 async function loginHandle(data) {
   return fetch('http://127.0.0.1:8000/login', {
@@ -55,9 +56,10 @@ function Login() {
     e.preventDefault();
       if(validate()){
         setErrors({login: "", password: ""})
+        const hashedpass = sha512(password)
         const token = await loginHandle({
           "username":login,
-          "password":password
+          "password":hashedpass
         });
 
         if(typeof JSON.stringify(token.user_id) !== 'undefined') {

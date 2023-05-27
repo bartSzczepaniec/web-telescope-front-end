@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StandardHeader from "../components/StandardHeader";
 import MenuButtonSmall from "../components/MenuButtonSmall";
+import sha512 from 'js-sha512';
 
 async function registerHandle(data) {
   return fetch('http://127.0.0.1:8000/users', {
@@ -16,6 +17,7 @@ async function registerHandle(data) {
  }
 
 function Register() {
+
   const [login, setLogin] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -91,9 +93,10 @@ function Register() {
     e.preventDefault();
     if(validate()) {
       setErrors({login: "", email: "", password: "", passwordr: ""})
+      const hashedpass = sha512(password)
       const response = await registerHandle({
         "username":login,
-        "password":password,
+        "password":hashedpass,
         "email":email
       });
       if(response === 201) {
