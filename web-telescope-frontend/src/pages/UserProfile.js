@@ -74,7 +74,7 @@ function UserProfile() {
                     <div className="profile-col-l">
                         <div className="profile-col-content">
                         <h4>Dane użytkownika</h4>
-                        Login: {userdata.email}<br/>
+                        Login: {userdata.username}<br/>
                         Email: {userdata.email}<br/>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ function UserProfile() {
                         <h4>Polubione tematy</h4>
                         {usertopics.map( usertopic =>
                         <div className="topic">
-                            <Link to={"/temat?id="+usertopic.id}>
+                            <Link to={"/temat?id="+usertopic.id+"&dzial="+usertopic.section}>
                                 <img className="topic-arrow" src={arrow} alt="arrow" /> <h5 className="topic-title">{usertopic.title}</h5>
                             </Link>
                         </div>

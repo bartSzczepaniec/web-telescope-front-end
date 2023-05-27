@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import SectionImagePlaceholder from "../assets/content/galaktyka.jpg"
 import StandardHeader from "../components/StandardHeader";
+import { SizeContext } from "../App";
 
 async function favouriteHandle(data, user) {
   return fetch('http://127.0.0.1:8000/users/'+user+'/favourited_topics', {
@@ -14,6 +15,10 @@ async function favouriteHandle(data, user) {
   })
  }
 
+ async function unfavouriteHandle(id, user) {
+  return fetch('http://127.0.0.1:8000/users/'+user+'/favourited_topics/'+id, {method: 'DELETE'})
+ }
+
 function Subject() {
   const [paragraphs, setParagraphs] = useState([])
   const [title, setTitle] = useState("")
@@ -21,7 +26,9 @@ function Subject() {
   const [time, setTime] = useState("")
   const [searchParams, setSearchParams] = useSearchParams();
   const [photos, setPhotos] = useState("")
+  const [favourite, setFavourite] = useState(false)
   const [user, setUser] = useState(sessionStorage.getItem('userid'))
+  const {size, setSize} = useContext(SizeContext)
 
   const fetchChaptersData = () => {
     fetch("http://127.0.0.1:8000/topics/" + searchParams.get("id") + "?format=json")
@@ -37,8 +44,26 @@ function Subject() {
       })
   }
 
+  const fetchFavouritesData= () => {
+    fetch("http://127.0.0.1:8000/users/" + user + "/favourited_topics?format=json")
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        data.map(topic => {
+          if(topic.id == searchParams.get("id"))
+          {
+            setFavourite(true)
+          }
+        })
+      })
+  }
+
   useEffect(() => {
     fetchChaptersData()
+    if(checkIfLoggedIn) {
+      fetchFavouritesData()
+    }
   }, [])
 
   const checkIfLoggedIn = () => {
@@ -51,9 +76,15 @@ function Subject() {
   }
 
   const handleFavourite = async e => {
+    setFavourite(true)
     const token = await favouriteHandle({
       "topic_id":searchParams.get("id")
     }, user);
+  }
+
+  const handleUnfavourite = async e => {
+    setFavourite(false)
+    const token = await unfavouriteHandle(searchParams.get("id"), user);
   }
 
     return (
@@ -63,7 +94,7 @@ function Subject() {
             {searchParams.get("dzial") && <Link to={"/ucz-sie-dzial?id=" + searchParams.get("dzial")}>Wróć do wyboru rozdziałów i tematów › </Link>}
             <div className="wide-content">
                 {title && <h3 className="content-header">{title}</h3>}
-                <div className="main-content subject">
+                <div className={"main-content subject"}>
                 {difficulty && <h4>Poziom trudnośći: {difficulty}</h4>}
                 {time > 1 && <h4 className="time">Czas: {time} minut(y)</h4>}
                 {time == 1 && <h4 className="time">Czas: {time} minuta</h4>}
@@ -82,7 +113,8 @@ function Subject() {
                       <img src={require("../assets/content/" + photo.url)} alt={photo.alt}/> 
                   </div>
                   )}
-                  {checkIfLoggedIn() && <div><button onClick={handleFavourite} className="favourite-button">Dodaj do ulubionych</button></div>}
+                  {(checkIfLoggedIn() && !favourite) && <div><button onClick={handleFavourite} className="favourite-button">Dodaj do ulubionych</button></div>}
+                  {(checkIfLoggedIn() && favourite) && <div><button onClick={handleUnfavourite} className="favourite-button">Usuń z ulubionych</button></div>}
                   {searchParams.get("dzial") && <Link to={"/ucz-sie-dzial?id=" + searchParams.get("dzial")}>Wróć do wyboru rozdziałów i tematów › </Link>}
                 </div>
             </div>

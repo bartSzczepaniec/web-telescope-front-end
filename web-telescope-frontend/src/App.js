@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import React, { useEffect, useState } from "react";
 import Intro  from './pages/Intro';
 import Menu from './pages/Menu';
 import Login from './pages/Login';
@@ -13,9 +14,24 @@ import ScrollTopInstant from './ScrollTopInstant';
 import UserProfile from './pages/UserProfile';
 import Test from './pages/Test';
 
+export const SizeContext = React.createContext();
+
 function App() {
+  const [size, setSize] = useState("resizermedium")
+
+  useEffect(() => {
+    const sizeString = sessionStorage.getItem('size');
+    if(!sizeString || typeof sizeString === 'undefined' || sizeString === null) {
+      setSize("resizermedium")
+    }
+    else {
+      setSize(sizeString)
+    }
+  }, [])
+
   return (
-    <div className="App">
+    <div className={"App "+size}>
+      <SizeContext.Provider value={{ size, setSize}}>
       <BrowserRouter>
       <ScrollTopInstant />
         <Routes>
@@ -31,8 +47,10 @@ function App() {
           <Route path="/temat" element={<Subject />} />
           <Route path="/profil" element={<UserProfile />} />
           <Route path="/test" element={<Test />} />
+          <Route path="/*" element={<Menu />} />
         </Routes>
       </BrowserRouter>
+      </SizeContext.Provider>
     </div>
   );
 }

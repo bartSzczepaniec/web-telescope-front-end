@@ -22,7 +22,7 @@ function TestMenu() {
 
     return (
       <div>
-        <StandardHeader title="UCZ SIĘ" />
+        <StandardHeader title="ROZWIĄŻ TESTY" />
         <div className="Menu">
           <nav className="Main-nav">
           {sections.map(section => 

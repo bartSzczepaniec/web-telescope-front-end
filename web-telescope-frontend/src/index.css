@@ -25,6 +25,14 @@ header.Standard-header {
   font-size: 30px;
 }
 
+.resizerbig .Standard-header h3 {
+  font-size: 34px;
+}
+
+.resizersmall .Standard-header h3 {
+  font-size: 26px;
+}
+
 .top-header {
   padding-right: 10px;
   padding-left: 10px;
@@ -65,6 +73,13 @@ header.Standard-header {
     margin-top: 0px;
     font-size: 26px;
   }
+  .resizerbig .Standard-header h3 {
+    font-size: 30px;
+  }
+  
+  .resizersmall .Standard-header h3 {
+    font-size: 22px;
+  }
 }
 
 /*  Intro / Landing-page */
@@ -83,6 +98,14 @@ div.Intro {
 
 .Intro h2 {
   font-size: 40px;
+}
+
+.resizerbig .Intro h2 {
+  font-size: 44px;
+}
+
+.resizersmall .Intro h2 {
+  font-size: 36px;
 }
 
 .Intro img {
@@ -110,6 +133,14 @@ button.menu-small-button {
   transition-duration: 0.3s;
 }
 
+.resizerbig button.menu-small-button {
+  font-size: 24px;
+}
+
+.resizersmall button.menu-small-button {
+  font-size: 20px;
+}
+
 button.menu-small-button:hover {
   cursor: pointer;
   transform: scale(1.05); 
@@ -126,9 +157,27 @@ button.menu-small-button:hover {
     padding-top: 15px;
     padding-bottom: 15px;
   }
+
+  .resizerbig button.menu-small-button {
+    font-size: 22px;
+  }
+  
+  .resizersmall button.menu-small-button {
+    font-size: 18px;
+  }
+
   .Intro h2 {
     font-size: 30px;
   }
+
+  .resizerbig .Intro h2 {
+    font-size: 32px;
+  }
+
+  .resizersmall .Intro h2 {
+    font-size: 28px;
+  }
+
   .horizontal-spacer {
     width: 100px;
   }
@@ -162,6 +211,13 @@ button.main-menu-button {
   border-radius: 15px;
   margin-top: 20px;
   transition-duration: 0.3s;
+}
+.resizerbig button.main-menu-button {
+  font-size: 26px;
+}
+
+.resizersmall button.main-menu-button {
+  font-size: 22px;
 }
 
 button.main-menu-button:hover {
@@ -211,6 +267,13 @@ div.button-image-container {
     padding-top: 20px;
     padding-bottom: 20px;
   }
+  .resizerbig button.main-menu-button {
+    font-size: 22px;
+  }
+  
+  .resizersmall button.main-menu-button {
+    font-size: 18px;
+  }
 }
 
 
@@ -244,6 +307,14 @@ div.form-container {
   font-weight: bold;
 }
 
+.resizerbig .form-container h4 {
+  font-size: 28px;
+}
+
+.resizersmall .form-container h4 {
+  font-size: 24px;
+}
+
 .form-spacer {
   width: 80px;
   height: 1.5px;
@@ -262,6 +333,14 @@ div.form-container {
   padding-bottom: 100px;
 }
 
+.resizerbig .form-container form {
+  font-size: 24px;
+}
+
+.resizersmall .form-container form {
+  font-size: 20px;
+}
+
 .form-input {
   width: 100%;
   font-size: 22px;
@@ -274,6 +353,14 @@ div.form-container {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.resizerbig .form-input {
+  font-size: 24px;
+}
+
+.resizersmall .form-input {
+  font-size: 20px;
 }
 
 .form-submit {
@@ -294,6 +381,14 @@ div.form-container {
   display: block;
 }
 
+.resizerbig .form-submit {
+  font-size: 24px;
+}
+
+.resizersmall .form-submit {
+  font-size: 20px;
+}
+
 input.form-submit:hover {
   cursor: pointer;
 }
@@ -301,6 +396,14 @@ input.form-submit:hover {
 input.form-input::placeholder {
   font-size: 22px;
   color: #6889A6;
+}
+
+.resizerbig input.form-input::placeholder {
+  font-size: 24px;
+}
+
+.resizersmall input.form-input::placeholder {
+  font-size: 20px;
 }
 
 .form-container form a {
@@ -311,11 +414,25 @@ input.form-input::placeholder {
   font-size: 18px;
   text-decoration: none !important;
 }
+.resizerbig .register-link {
+  font-size: 20px;
+}
+.resizersmall .register-link {
+  font-size: 16px;
+}
 
 p.error {
   min-height: 18px;
   font-size: 16px;
   color: #FB2424;
+}
+
+.resizerbig p.error {
+  font-size: 18px;
+}
+
+.resizersmall p.error {
+  font-size: 14px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -343,21 +460,57 @@ p.error {
     font-size: 20px;
     width: 80%;
   }
+  .resizerbig .form-container form {
+    font-size: 22px;
+  }
+  .resizerbig .form-container form {
+    font-size: 18px;
+  }
   .form-input {
     font-size: 20px;
     width: 80%;
   }
+  .resizerbig .form-input {
+    font-size: 22px;
+  }
+  .resizersmall .form-input {
+    font-size: 18px;
+  }
   .form-container h4 {
     font-size: 24px;
+  }
+  .resizerbig .form-container h4 {
+    font-size: 26px;
+  }
+  .resizersmall .form-container h4 {
+    font-size: 22px;
   }
   .form-submit {
     font-size: 20px;
   }
+  .resizerbig .form-submit {
+    font-size: 22px;
+  }
+  .resizersmall .form-submit {
+    font-size: 18px;
+  }
   .register-link {
     font-size: 16px;
   }
+  .resizerbig .register-link {
+    font-size: 18px;
+  }
+  .resizersmall .register-link {
+    font-size: 14px;
+  }
   input.form-input::placeholder {
     font-size: 20px;
+  }
+  .resizerbig input.form-input::placeholder {
+    font-size: 22px;
+  }
+  .resizersmall input.form-input::placeholder {
+    font-size: 18px;
   }
   .Small-header img {
     margin-left: auto;
@@ -389,6 +542,14 @@ button.section-menu-button {
   border-radius: 15px;
   margin-top: 20px;
   transition-duration: 0.3s;
+}
+
+.resizerbig button.section-menu-button {
+  font-size: 26px;
+}
+
+.resizersmall button.section-menu-button {
+  font-size: 22px;
 }
 
 button.section-menu-button:hover {
@@ -423,7 +584,13 @@ div.section-button-image-container {
     padding-top: 30px;
     padding-bottom: 30px;
   }
+  .resizerbig button.section-menu-button {
+    font-size: 22px;
+  }
   
+  .resizersmall button.section-menu-button {
+    font-size: 18px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -451,6 +618,12 @@ div.section-button-image-container {
   font-size: 18px;
   text-decoration: none !important;
 }
+.resizerbig .wide-content-container a{
+  font-size: 20px;
+}
+.resizersmall .wide-content-container a{
+  font-size: 16px;
+}
 
 .wide-content {
   background-color: #0A1126;
@@ -467,6 +640,12 @@ h3.content-header {
   font-size: 30px;
   text-align: center;
   margin-bottom: 40px;
+}
+.resizerbig h3.content-header {
+  font-size: 32px;
+}
+.resizersmall h3.content-header {
+  font-size: 28px;
 }
 
 .content-top-image-container img{
@@ -503,10 +682,25 @@ div.main-content {
   display: inline;
 }
 
+.resizerbig .Chapter h4 {
+  font-size: 28px;
+}
+.resizersmall .Chapter h4 {
+  font-size: 24px;
+}
+
 .Chapter h5 {
   font-size: 20px;
   margin: 5px;
   display: inline;
+}
+
+.resizerbig .Chapter h5 {
+  font-size: 22px;
+}
+
+.resizersmall .Chapter h5 {
+  font-size: 18px;
 }
 
 img.chapter-arrow {
@@ -526,9 +720,6 @@ img.topic-arrow {
   display: none;
   animation: goDown 400ms ease-in-out forwards;
   transform-origin: top center;
-  /* animacja wejscia zrobic
-
-  */
 }
 
 @keyframes goDown {
@@ -558,20 +749,45 @@ img.topic-arrow {
     text-align: center;
     margin-bottom: 10px;
   }
+  
 }
 
 @media only screen and (max-width: 767px) {
   h3.content-header {
     font-size: 26px;
   }
+  .resizerbig h3.content-header {
+    font-size: 28px;
+  }
+  .resizersmall h3.content-header {
+    font-size: 24px;
+  }
   .Chapter h4 {
     font-size: 24px;
+  }
+  .resizerbig .Chapter h4 {
+    font-size: 26px;
+  }
+  .resizersmall .Chapter h4 {
+    font-size: 22px;
   }
   .Chapter h5 {
     font-size: 18px;
   }
+  .resizerbig .Chapter h5 {
+    font-size: 20px;
+  }
+  .resizersmall .Chapter h5 {
+    font-size: 16px;
+  }
   .wide-content-container a{
     font-size: 16px;
+  }
+  .resizerbig .wide-content-container a{
+    font-size: 18px;
+  }
+  .resizersmall .wide-content-container a{
+    font-size: 14px;
   }
 }
 
@@ -582,11 +798,26 @@ img.topic-arrow {
   font-size: 18px;
  }
 
+.resizerbig .main-content.subject p {
+  font-size: 20px;
+ }
+
+.resizersmall .main-content.subject p {
+  font-size: 16px;
+ }
+
  .main-content.subject h5 {
   font-size: 20px;
   font-weight: 700;
   margin-top: 5px;
   margin-bottom: 5px;
+ }
+
+ .resizerbig .main-content.subject h5 {
+  font-size: 22px;
+ }
+ .resizersmall .main-content.subject h5 {
+  font-size: 18px;
  }
 
  .main-content.subject h4 {
@@ -596,7 +827,15 @@ img.topic-arrow {
   margin-bottom: 10px;
   text-align: center;
  }
- 
+
+ .resizersmall .main-content.subject h4 {
+  font-size: 20px;
+ }
+
+ .resizerbig .main-content.subject h4 {
+  font-size: 24px;
+ }
+
  .main-content.subject h4.time {
   margin-bottom: 40px;
  }
@@ -641,13 +880,33 @@ img.topic-arrow {
   .main-content.subject p {
     font-size: 16px;
    }
+   .resizerbig .main-content.subject p {
+    font-size: 18px;
+   }
+   .resizersmall .main-content.subject p {
+    font-size: 14px;
+   }
   
    .main-content.subject h5 {
     font-size: 18px;
    }
+   .resizerbig .main-content.subject h5 {
+    font-size: 20px;
+   }
+   .resizersmall .main-content.subject h5 {
+    font-size: 16px;
+   }
+
    .main-content.subject h4 {
     font-size: 20px;
    }
+   .resizerbig .main-content.subject h4 {
+    font-size: 22px;
+   }
+   .resizersmall .main-content.subject h4 {
+    font-size: 18px;
+   }
+
    .main-content.subject h4.time {
     margin-bottom: 40px;
    }
@@ -680,6 +939,14 @@ div.profile-col-content {
   min-height: 140px;
 }
 
+.resizerbig div.profile-col-content {
+  font-size: 18px;
+}
+
+.resizersmall div.profile-col-content {
+  font-size: 14px;
+}
+
 .profile-menu-link {
   margin: 10px;
 }
@@ -695,11 +962,27 @@ div.profile-col-content {
   margin-top: 4px;
 }
 
+.resizerbig .User-profile h4 {
+  font-size: 28px;
+}
+
+.resizersmall .User-profile h4 {
+  font-size: 24px;
+}
+
 .User-profile h5 {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
   margin-top: 10px;
+}
+
+.resizerbig .User-profile h5 {
+  font-size: 18px;
+}
+
+.resizersmall .User-profile h5 {
+  font-size: 14px;
 }
 
 .liked-topics img, .liked-topics h4, .liked-topics h5 {
@@ -756,16 +1039,34 @@ div.scores {
     min-height: 0px;
     font-size: 14px;
   }
+  .resizerbig div.profile-col-content {
+    font-size: 16px;
+  }
+  
+  .resizersmall div.profile-col-content {
+    font-size: 12px;
+  }
   .User-profile h4 {
     text-align: center;
     font-size: 24px;
     margin-bottom: 10px;
+  }
+  .resizerbig .User-profile h4 {
+    font-size: 26px;
+  }
+  
+  .resizersmall .User-profile h4 {
+    font-size: 22px;
   }
   div.profile-col-content {
     padding: 15px;
   }
   .User-profile h5 {
     text-align: center;
+  }
+  .User-profile .topic h5 {
+    text-align: left;
+    display: inline;
   }
 }
 
@@ -777,6 +1078,14 @@ div.scores {
   margin-bottom: 4px;
   margin-top: 4px;
   text-align: center;
+}
+
+.resizerbig .question h4 {
+  font-size: 24px;
+}
+
+.resizersmall .question h4 {
+  font-size: 20px;
 }
 
 .question-content h4 {
@@ -792,8 +1101,24 @@ div.scores {
   text-align: center;
 }
 
+.resizerbig .question-content h3 {
+  font-size: 26px;
+}
+
+.resizersmall .question-content h3 {
+  font-size: 22px;
+}
+
 .question-content h5 {
   font-size: 20px;
+}
+
+.resizerbig .question-content h5 {
+  font-size: 22px;
+}
+
+.resizersmall .question-content h5 {
+  font-size: 18px;
 }
 
 .test-content {
@@ -815,6 +1140,26 @@ div.question-content {
 
 .question-content p {
   font-size: 20px;
+}
+
+.resizerbig .question-content p {
+  font-size: 22px;
+}
+
+.resizersmall .question-content p {
+  font-size: 18px;
+}
+
+.question-content label {
+  font-size: 20px;
+}
+
+.resizerbig .question-content label {
+  font-size: 22px;
+}
+
+.resizersmall .question-content label {
+  font-size: 18px;
 }
 
 .question-content img {
@@ -872,6 +1217,15 @@ div.label-option {
   margin-top: 20px;
   transition-duration: 0.3s;
 }
+
+.resizerbig .answers input, .resizerbig .answers button{
+  font-size: 22px;
+}
+
+.resizersmall .answers input, .resizersmall .answers button{
+  font-size: 18px;
+}
+
 .answers input:hover, .answers button:hover {
   cursor: pointer;
   transform: scale(1.05); 
@@ -887,6 +1241,14 @@ h3.answer-feedback {
   font-weight: bold;
   margin-bottom: 4px;
   text-align: center;
+}
+
+.resizerbig h3.answer-feedback {
+  font-size: 26px;
+}
+
+.resizersmall h3.answer-feedback {
+  font-size: 22px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -911,11 +1273,29 @@ h3.answer-feedback {
   .question h4 {
     font-size: 20px;
   }
+  .resizerbig .question h4 {
+    font-size: 22px;
+  }
+  .resizersmall .question h4 {
+    font-size: 18px;
+  }
   .question-content h3 {
     font-size: 22px;
   }
+  .resizerbig .question-content h3 {
+    font-size: 24px;
+  }
+  .resizersmall .question-content h3 {
+    font-size: 20px;
+  }
   .question-content h5 {
     font-size: 18px;
+  }
+  .resizerbig .question-content h5 {
+    font-size: 20px;
+  }
+  .resizersmall .question-content h5 {
+    font-size: 16px;
   }
   h3.answer-feedback {
     font-weight: bold;
@@ -924,17 +1304,14 @@ h3.answer-feedback {
     font-size: 18px;
     width: 80%;
   }
+  .resizerbig .answers input, .resizerbig .answers button{
+    font-size: 20px;
+  }
+  .resizersmall .answers input, .resizersmall .answers button{
+    font-size: 16px;
+  }
   div.radio-option, div.label-option {
     display: inline;
     width: 50%;
   }
 }
-
-/*
-
-
-TODO ANIMACJA WEJSCIA TYTULU STRONY POD LOGIEM,
-ZDJĘCIA Z HEIGHT NA %VIEWHEIGHT ALBO %
-
-
-*/
