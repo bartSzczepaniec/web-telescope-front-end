@@ -19,7 +19,7 @@ function LearnSection() {
         setChapters(data.chapters);
         setTitle(data.title);
         setPhoto(data.photo.url);
-      })
+      }).catch(err => { const mute = err })
   }
 
   useEffect(() => {

@@ -17,7 +17,7 @@ function Test() {
           })
           .then(data => {
             setTest(data)
-          })
+          }).catch(err => { const mute = err })
       }
 
     useEffect(() => {

@@ -13,7 +13,7 @@ async function registerHandle(data) {
     },
     body: JSON.stringify(data)
   })
-    .then(data => data.status)
+    .then(data => data.status).catch(err => { const mute = err })
  }
 
 function Register() {

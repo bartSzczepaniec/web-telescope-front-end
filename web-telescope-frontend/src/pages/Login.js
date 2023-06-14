@@ -14,7 +14,7 @@ async function loginHandle(data) {
     },
     body: JSON.stringify(data)
   })
-    .then(data => data.json())
+    .then(data => data.json()).catch(err => { const mute = err })
  }
 
  async function setUserId(userId) {

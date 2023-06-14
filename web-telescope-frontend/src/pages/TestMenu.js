@@ -13,7 +13,7 @@ function TestMenu() {
         .then(data => {
           setSections(data)
           return data
-        })
+        }).catch(err => { const mute = err })
     }
   
     useEffect(() => {

@@ -12,11 +12,11 @@ async function favouriteHandle(data, user) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(data)
-  })
+  }).catch(err => { const mute = err })
  }
 
  async function unfavouriteHandle(id, user) {
-  return fetch('http://127.0.0.1:8000/users/'+user+'/favourited_topics/'+id, {method: 'DELETE'})
+  return fetch('http://127.0.0.1:8000/users/'+user+'/favourited_topics/'+id, {method: 'DELETE'}).catch(err => { const mute = err })
  }
 
 function Subject() {
@@ -41,7 +41,7 @@ function Subject() {
         setDifficulty(data.difficulty)
         setTime(data.time_investment)
         setPhotos(data.photos)
-      })
+      }).catch(err => { const mute = err })
   }
 
   const fetchFavouritesData= () => {
@@ -56,7 +56,7 @@ function Subject() {
             setFavourite(true)
           }
         })
-      })
+      }).catch(err => { const mute = err })
   }
 
   useEffect(() => {

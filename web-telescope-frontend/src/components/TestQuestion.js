@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 async function checkAnswerHandle(answer) {
     return fetch('http://127.0.0.1:8000/answers/' + answer +"/check?format=json")
       .then(data => data.json())
-      .then(data => data.is_correct)
+      .then(data => data.is_correct).catch(err => { const mute = err })
    }
 
 function TestQuestion(props) {
@@ -44,7 +44,7 @@ function TestQuestion(props) {
                 "score":sum,
                 "date": today.toISOString()
               })
-          })
+          }).catch(err => { const mute = err })
           setPoints(sum)
           setCompleted(true)
       }

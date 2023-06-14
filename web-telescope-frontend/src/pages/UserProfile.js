@@ -20,22 +20,21 @@ function UserProfile() {
           })
           .then(data => {
             setUserdata(data)
-          })
-
+          }).catch(err => { const mute = err })
         fetch("http://127.0.0.1:8000/users/" + user + "/scores?format=json")
           .then(response => {
             return response.json()
           })
           .then(data => {
             setUserscores(data)
-          })
+          }).catch(err => { const mute = err })
         fetch("http://127.0.0.1:8000/users/" + user + "/favourited_topics?format=json")
           .then(response => {
             return response.json()
           })
           .then(data => {
             setUsertopics(data)
-          })
+          }).catch(err => { const mute = err })
       }
      
 

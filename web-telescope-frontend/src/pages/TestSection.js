@@ -19,7 +19,7 @@ function TestSection() {
       })
       .then(data => {
         setChapters(data);
-      })
+      }).catch(err => { const mute = err })
       fetch("http://127.0.0.1:8000/sections/" + searchParams.get("id") + "?format=json")
       .then(response => {
         return response.json()
@@ -27,7 +27,7 @@ function TestSection() {
       .then(data => {
         setTitle(data.title);
         setPhoto(data.photo.url);
-      })
+      }).catch(err => { const mute = err })
   }
 
   useEffect(() => {
